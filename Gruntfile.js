@@ -201,8 +201,9 @@ module.exports = function (grunt) {
       examples: {
         expand: true,
         cwd: 'docs/examples/',
-        src: '**/*.css',
-        dest:'docs/examples/'
+        src: ['**/*.css', '!**/*.rtl.css'],
+        dest:'docs/examples/',
+        ext: '.rtl.css'
       }
     },
     autoprefixer: {
