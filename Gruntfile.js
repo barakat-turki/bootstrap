@@ -176,7 +176,35 @@ module.exports = function (grunt) {
         dest: 'dist/css/<%= pkg.name %>-theme.css'
       }
     },
-
+    rtlcss: {
+      opts: {
+        // rtlcss options
+      },
+      core: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/<%= pkg.name %>.css',
+        dest: 'dist/css/<%= pkg.name %>.css'
+      },
+      theme: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/<%= pkg.name %>-theme.css',
+        dest: 'dist/css/<%= pkg.name %>-theme.css'
+      },
+      docs: {
+        src: 'docs/assets/css/src/docs.css',
+        dest: 'docs/assets/css/src/docs.rtl.css'
+      },
+      examples: {
+        expand: true,
+        cwd: 'docs/examples/',
+        src: '**/*.css',
+        dest:'docs/examples/'
+      }
+    },
     autoprefixer: {
       options: {
         browsers: configBridge.config.autoprefixerBrowsers
@@ -194,7 +222,7 @@ module.exports = function (grunt) {
         src: 'dist/css/<%= pkg.name %>-theme.css'
       },
       docs: {
-        src: ['docs/assets/css/src/docs.css']
+        src: ['docs/assets/css/src/docs.css', 'docs/assets/css/src/docs.rtl.css']
       },
       examples: {
         expand: true,
@@ -246,7 +274,7 @@ module.exports = function (grunt) {
         src: [
           'docs/assets/css/ie10-viewport-bug-workaround.css',
           'docs/assets/css/src/pygments-manni.css',
-          'docs/assets/css/src/docs.css'
+          'docs/assets/css/src/docs.rtl.css'
         ],
         dest: 'docs/assets/css/docs.min.css'
       }
@@ -475,7 +503,7 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('dist-css', ['less-compile','rtlcss:core', 'rtlcss:theme', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
@@ -500,7 +528,7 @@ module.exports = function (grunt) {
   });
 
   // Docs task.
-  grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
+  grunt.registerTask('docs-css', ['rtlcss:docs', 'rtlcss:examples','autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
   grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
   grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
   grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
