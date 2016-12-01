@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 .btn-default,
@@ -76,7 +76,7 @@ fieldset[disabled] .btn-danger {
 .btn-default:hover,
 .btn-default:focus {
   background-color: #e0e0e0;
-  background-position: 0 -15px;
+  background-position: 100% -15px;
 }
 .btn-default:active,
 .btn-default.active {
@@ -117,7 +117,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #265a88;
-  background-position: 0 -15px;
+  background-position: 100% -15px;
 }
 .btn-primary:active,
 .btn-primary.active {
@@ -158,7 +158,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-success:hover,
 .btn-success:focus {
   background-color: #419641;
-  background-position: 0 -15px;
+  background-position: 100% -15px;
 }
 .btn-success:active,
 .btn-success.active {
@@ -199,7 +199,7 @@ fieldset[disabled] .btn-success.active {
 .btn-info:hover,
 .btn-info:focus {
   background-color: #2aabd2;
-  background-position: 0 -15px;
+  background-position: 100% -15px;
 }
 .btn-info:active,
 .btn-info.active {
@@ -240,7 +240,7 @@ fieldset[disabled] .btn-info.active {
 .btn-warning:hover,
 .btn-warning:focus {
   background-color: #eb9316;
-  background-position: 0 -15px;
+  background-position: 100% -15px;
 }
 .btn-warning:active,
 .btn-warning.active {
@@ -281,7 +281,7 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger:hover,
 .btn-danger:focus {
   background-color: #c12e2a;
-  background-position: 0 -15px;
+  background-position: 100% -15px;
 }
 .btn-danger:active,
 .btn-danger.active {
@@ -495,9 +495,11 @@ fieldset[disabled] .btn-danger.active {
   background-repeat: repeat-x;
 }
 .progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
-  background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
-  background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:      -o-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:         linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 }
 .list-group {
   border-radius: 4px;
