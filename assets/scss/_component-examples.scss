@@ -375,9 +375,11 @@
 //
 
 .highlight {
+  direction: ltr#{"/*!rtl:ignore*/"};
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-align: left#{"/*!rtl:ignore*/"};
   background-color: #f7f7f9;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 

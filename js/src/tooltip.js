@@ -24,6 +24,7 @@ const Tooltip = (($) => {
   const TRANSITION_DURATION = 150
   const CLASS_PREFIX        = 'bs-tooltip'
   const BSCLS_PREFIX_REGEX = new RegExp(`(^|\\s)${CLASS_PREFIX}\\S+`, 'g')
+  const RTL                 = document.documentElement.dir === 'rtl'
 
   const DefaultType = {
     animation           : 'boolean',
@@ -43,9 +44,9 @@ const Tooltip = (($) => {
   const AttachmentMap = {
     AUTO   : 'auto',
     TOP    : 'top',
-    RIGHT  : 'right',
+    [RTL ? 'LEFT' : 'RIGHT']  : 'right',
     BOTTOM : 'bottom',
-    LEFT   : 'left'
+    [RTL ? 'RIGHT' : 'LEFT']  : 'left'
   }
 
   const Default = {

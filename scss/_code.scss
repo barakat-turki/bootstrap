@@ -3,6 +3,8 @@ code,
 kbd,
 pre,
 samp {
+  direction: ltr #{"/*!rtl:ignore*/"};
+  unicode-bidi: bidi-override;
   font-family: $font-family-monospace;
 }
 

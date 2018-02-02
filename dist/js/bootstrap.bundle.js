@@ -3837,6 +3837,8 @@ Popper.Defaults = Defaults;
  */
 
 var Dropdown = function ($$$1) {
+  var _AttachmentMap;
+
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -3861,6 +3863,7 @@ var Dropdown = function ($$$1) {
   var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 
   var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
+  var RTL = document.documentElement.dir === 'rtl';
   var Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
@@ -3888,16 +3891,7 @@ var Dropdown = function ($$$1) {
     NAVBAR_NAV: '.navbar-nav',
     VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled)'
   };
-  var AttachmentMap = {
-    TOP: 'top-start',
-    TOPEND: 'top-end',
-    BOTTOM: 'bottom-start',
-    BOTTOMEND: 'bottom-end',
-    RIGHT: 'right-start',
-    RIGHTEND: 'right-end',
-    LEFT: 'left-start',
-    LEFTEND: 'left-end'
-  };
+  var AttachmentMap = (_AttachmentMap = {}, _AttachmentMap[RTL ? 'TOPEND' : 'TOP'] = 'top-start', _AttachmentMap[RTL ? 'TOP' : 'TOPEND'] = 'top-end', _AttachmentMap[RTL ? 'BOTTOMEND' : 'BOTTOM'] = 'bottom-start', _AttachmentMap[RTL ? 'BOTTOM' : 'BOTTOMEND'] = 'bottom-end', _AttachmentMap[RTL ? 'LEFT' : 'RIGHT'] = 'right-start', _AttachmentMap[RTL ? 'LEFTEND' : 'RIGHTEND'] = 'right-end', _AttachmentMap[RTL ? 'RIGHT' : 'LEFT'] = 'left-start', _AttachmentMap[RTL ? 'RIGHTEND' : 'LEFTEND'] = 'left-end', _AttachmentMap);
   var Default = {
     offset: 0,
     flip: true,
@@ -4878,6 +4872,8 @@ var Modal = function ($$$1) {
  */
 
 var Tooltip = function ($$$1) {
+  var _AttachmentMap;
+
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -4891,6 +4887,7 @@ var Tooltip = function ($$$1) {
   var TRANSITION_DURATION = 150;
   var CLASS_PREFIX = 'bs-tooltip';
   var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+  var RTL = document.documentElement.dir === 'rtl';
   var DefaultType = {
     animation: 'boolean',
     template: 'string',
@@ -4905,13 +4902,10 @@ var Tooltip = function ($$$1) {
     fallbackPlacement: '(string|array)',
     boundary: '(string|element)'
   };
-  var AttachmentMap = {
+  var AttachmentMap = (_AttachmentMap = {
     AUTO: 'auto',
-    TOP: 'top',
-    RIGHT: 'right',
-    BOTTOM: 'bottom',
-    LEFT: 'left'
-  };
+    TOP: 'top'
+  }, _AttachmentMap[RTL ? 'LEFT' : 'RIGHT'] = 'right', _AttachmentMap.BOTTOM = 'bottom', _AttachmentMap[RTL ? 'RIGHT' : 'LEFT'] = 'left', _AttachmentMap);
   var Default = {
     animation: true,
     template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',

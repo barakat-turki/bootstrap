@@ -11,6 +11,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
  * --------------------------------------------------------------------------
  */
 var Tooltip = function ($) {
+  var _AttachmentMap;
+
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -24,6 +26,7 @@ var Tooltip = function ($) {
   var TRANSITION_DURATION = 150;
   var CLASS_PREFIX = 'bs-tooltip';
   var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+  var RTL = document.documentElement.dir === 'rtl';
   var DefaultType = {
     animation: 'boolean',
     template: 'string',
@@ -38,13 +41,10 @@ var Tooltip = function ($) {
     fallbackPlacement: '(string|array)',
     boundary: '(string|element)'
   };
-  var AttachmentMap = {
+  var AttachmentMap = (_AttachmentMap = {
     AUTO: 'auto',
-    TOP: 'top',
-    RIGHT: 'right',
-    BOTTOM: 'bottom',
-    LEFT: 'left'
-  };
+    TOP: 'top'
+  }, _AttachmentMap[RTL ? 'LEFT' : 'RIGHT'] = 'right', _AttachmentMap.BOTTOM = 'bottom', _AttachmentMap[RTL ? 'RIGHT' : 'LEFT'] = 'left', _AttachmentMap);
   var Default = {
     animation: true,
     template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
