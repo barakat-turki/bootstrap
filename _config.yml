@@ -63,7 +63,7 @@ themes:               "https://themes.getbootstrap.com"
 
 download:
   source:           "https://github.com/RTLCSS/bootstrap/archive/4.0.0-rtl.zip"
-  dist:             "https://github.com/RTLCSS/bootstrap/releases/download/v4.0.0-rtl/bootstrap-4.0.0-rtl-dist.zip"
+  dist:             "https://github.com/RTLCSS/bootstrap/releases/download/4.0.0-rtl/bootstrap-4.0.0-rtl-dist.zip"
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
