@@ -62,8 +62,8 @@ jobs:                 "https://jobs.getbootstrap.com"
 themes:               "https://themes.getbootstrap.com"
 
 download:
-  source:           "https://github.com/RTLCSS/bootstrap/archive/v4.0.0.zip"
-  dist:             "https://github.com/RTLCSS/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip"
+  source:           "https://github.com/RTLCSS/bootstrap/archive/4.0.0-rtl.zip"
+  dist:             "https://github.com/RTLCSS/bootstrap/releases/download/v4.0.0-rtl/bootstrap-4.0.0-rtl-dist.zip"
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
